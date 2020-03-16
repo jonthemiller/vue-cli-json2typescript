@@ -1,24 +1,9 @@
-# vue-cli-json2typescript
+# vue-cli + json2typescript
 
-## Project setup
-```
-npm install
-```
+Project created to check status of bug reported to the Nuxt.js project
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Using the json2typescript library, the HelloWorld component intializes a object, then creates an instance of Obj. To prove that an instance was created, it calls a function from a subobject.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+To reproduce, run `npm install` then `npm run serve`. Visit http://localhost:8080 then view the console.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+When this code is run in a bare Nuxt project, the conversion fails with a generic error from the library.

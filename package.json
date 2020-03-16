@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "json2typescript": "^1.2.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {

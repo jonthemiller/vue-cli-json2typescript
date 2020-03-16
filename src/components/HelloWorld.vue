@@ -33,12 +33,35 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { JsonConvert } from 'json2typescript';
+import Obj from './Obj';
 
 export default Vue.extend({
   name: 'HelloWorld',
   props: {
     msg: String,
   },
+  created () {
+    // create object representation of model
+    const jsonObj = {
+      items: [
+        {
+          bar: 'somestring'
+        }
+      ]
+    };
+    // init the converter
+    const jsonConvert = new JsonConvert();
+    // attempt to create an Obj instance from the JS object
+    // error gets thrown here
+    const convertedObj = jsonConvert.deserializeObject(jsonObj, Obj);
+    // log out the obj
+    console.log(convertedObj);
+    // check to make sure that the "items" on the obj are actual instances of Item by calling method in class
+    if (convertedObj.items) {
+      convertedObj.items.map(item => console.log(item.getBar()));
+    }
+  }
 });
 </script>
 
